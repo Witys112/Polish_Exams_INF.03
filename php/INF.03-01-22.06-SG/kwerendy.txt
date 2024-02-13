@@ -1,0 +1,4 @@
+1. SELECT `id`,`nazwa`,`wystepowanie` FROM `ryby` WHERE `styl_zycia`=1;
+2. SELECT `Ryby_id`,`wymiar_ochronny` FROM `okres_ochronny` WHERE `wymiar_ochronny` < 30;
+3. SELECT `nazwa`, lowisko.akwen, lowisko.wojewodztwo FROM `ryby`, lowisko WHERE ryby.id=lowisko.Ryby_id;
+4. ALTER TABLE Ryby ADD COLUMN dobowy_limit TINYINT UNSIGNED NOT NULL CHECK (dobowy_limit BETWEEN 0 AND 255);
