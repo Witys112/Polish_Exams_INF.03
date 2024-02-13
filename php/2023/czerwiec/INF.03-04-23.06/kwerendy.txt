@@ -1,0 +1,4 @@
+1. SELECT `imie`,`nazwisko` FROM `autorzy` ORDER BY `nazwisko` ASC;
+2. INSERT INTO `czytelnicy`(`imie`, `nazwisko`, `kod`) VALUES ('Ewa','Kowalska','145321');
+3. SELECT `tytul` FROM `ksiazki`, kategorie WHERE `id_kategoria`= kategorie.id AND kategorie.nazwa = 'dramat';
+4. SELECT `tytul` FROM `ksiazki`, wypozyczenia WHERE ksiazki.`id` = wypozyczenia.id_ksiazka AND wypozyczenia.id_czytelnik = 2;
