@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lis 2018, 10:30
--- Wersja serwera: 10.1.36-MariaDB
--- Wersja PHP: 7.2.11
+-- Generation Time: Feb 13, 2024 at 08:25 PM
+-- Wersja serwera: 10.4.28-MariaDB
+-- Wersja PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `egzamin`
+-- Database: `kalendarz`
 --
 
 -- --------------------------------------------------------
@@ -31,13 +30,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `zadania` (
   `id` int(10) UNSIGNED NOT NULL,
   `dataZadania` date DEFAULT NULL,
-  `wpis` text,
-  `miesiac` text,
+  `wpis` text DEFAULT NULL,
+  `miesiac` text DEFAULT NULL,
   `rok` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Zrzut danych tabeli `zadania`
+-- Dumping data for table `zadania`
 --
 
 INSERT INTO `zadania` (`id`, `dataZadania`, `wpis`, `miesiac`, `rok`) VALUES
@@ -80,7 +79,7 @@ INSERT INTO `zadania` (`id`, `dataZadania`, `wpis`, `miesiac`, `rok`) VALUES
 (37, '2020-08-06', '', 'sierpien', 2020),
 (38, '2020-08-07', 'Rower', 'sierpien', 2020),
 (39, '2020-08-08', 'Rower', 'sierpien', 2020),
-(40, '2020-08-09', '', 'sierpien', 2020),
+(40, '2020-08-09', '.witys', 'sierpien', 2020),
 (41, '2020-08-10', '', 'sierpien', 2020),
 (42, '2020-08-11', 'Weterynarz - Dika', 'sierpien', 2020),
 (43, '2020-08-12', '', 'sierpien', 2020),
@@ -120,7 +119,7 @@ ALTER TABLE `zadania`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `zadania`
+-- AUTO_INCREMENT for table `zadania`
 --
 ALTER TABLE `zadania`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
