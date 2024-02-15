@@ -34,7 +34,6 @@
         <img src="zwierzeta.jpg" alt="dzikie zwierzęta">
     </div>
     <div class="gsrodek">
-        <!-- SKRYPT 1 -->
         <?php
         $gromada = $_POST['gromada'];
         switch ($gromada) {
@@ -65,7 +64,6 @@
         <h2>
             Wszystkie zwierzęta w bazie
         </h2>
-        <!-- SKRYPT 2 -->
         <?php
         $quest = "SELECT zwierzeta.id, zwierzeta.gatunek, gromady.nazwa FROM `zwierzeta`, gromady WHERE zwierzeta.`Gromady_id` = gromady.id;";
         $query = mysqli_query($connect, $quest);
