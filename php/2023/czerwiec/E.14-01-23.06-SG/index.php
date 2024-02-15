@@ -37,7 +37,28 @@
         <!-- SKRYPT 1 -->
         <?php
         $gromada = $_POST['gromada'];
-        $quest = "SELECT `gatunek`, `wystepowanie` FROM `zwierzeta`, gromady WHERE zwierzeta.`Gromady_id` = gromady.id AND gromady.nazwa = 'ryby';";
+        switch ($gromada) {
+            case 1:
+                echo "<h2> RYBY </h2>";
+                break;
+            case 2:
+                echo "<h2> PŁAZY </h2>";
+                break;
+            case 3:
+                echo "<h2> GADY </h2>";
+                break;
+            case 4:
+                echo "<h2> PTAKI </h2>";
+                break;
+            case 5:
+                echo "<h2> SSAKI </h2>";
+                break;
+        }
+        $quest = "SELECT `gatunek`, `wystepowanie` FROM `zwierzeta`, gromady WHERE zwierzeta.`Gromady_id` = gromady.id AND gromady.id = '$gromada';";
+        $query = mysqli_query($connect, $quest);
+        while ($row = mysqli_fetch_array($query)) {
+            echo $row["0"]." ".$row["1"]."<br>";
+        }
         ?>
     </div>
     <div class="gprawy">
@@ -45,6 +66,13 @@
             Wszystkie zwierzęta w bazie
         </h2>
         <!-- SKRYPT 2 -->
+        <?php
+        $quest = "SELECT zwierzeta.id, zwierzeta.gatunek, gromady.nazwa FROM `zwierzeta`, gromady WHERE zwierzeta.`Gromady_id` = gromady.id;";
+        $query = mysqli_query($connect, $quest);
+        while ($row = mysqli_fetch_array($query)) {
+            echo $row["0"].", ".$row["1"].", ".$row["2"]."<br>";
+        }
+        ?>
     </div>
     <div class="stopka">
         <a href="atlas-zwierzat.pl" target="_blank">Poznaj inne strony o zwierzętach</a>
